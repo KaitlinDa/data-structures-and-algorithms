@@ -72,7 +72,7 @@ Prove that the original people, stuff, and state are unchanged.
 
 ------------------------------------------------------------------------------------------------ */
 
-const addPeople = () => {
+const addPeoplegst = () => {
   const newPeople = ['Odie', ...people, 'Garfield'];
 
   const newStuff = {
