@@ -8,8 +8,21 @@ Write a function that finds the maximum value in an array.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  // Solution code here...
+  if (arr.length === 0) {
+    return undefined;
+  }
+
+  let max = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+
+  return max;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -22,9 +35,17 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
-
+t
 const getCourseKeys = (obj) => {
-  // Solution code here...
+  const keys = Object.keys(obj);
+  return keys;
+};
+
+const courseInfo = {
+  name: 'Code 301',
+  duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
+  topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
+  finalExam: true
 };
 
 /* ------------------------------------------------------------------------------------------------
