@@ -35,17 +35,10 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
-t
+
 const getCourseKeys = (obj) => {
   const keys = Object.keys(obj);
   return keys;
-};
-
-const courseInfo = {
-  name: 'Code 301',
-  duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
-  topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
-  finalExam: true
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,8 +50,11 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // Solution code here...
+  const valuesArray = Object.values(obj);
+  return valuesArray.includes(value);
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -80,8 +76,18 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Solution code here...
+  const result = [];
+
+  for (const key in obj) {
+    const name = key;
+    const phoneNumber = obj[key];
+    const formattedString = `${name}: ${phoneNumber}`;
+    result.push(formattedString);
+  }
+
+  return result;
 };
+
 
 
 
@@ -136,7 +142,13 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+
+  for (const character of arr) {
+    if (character.house && !houses.includes(character.house)) {
+      houses.push(character.house);
+    }
+  }
+
   return houses;
 };
 
@@ -153,8 +165,17 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  const foundCharacter = arr.find((char) => char.name === character);
 
+  if (foundCharacter) {
+    const valuesArray = Object.values(foundCharacter);
+
+    if (valuesArray.includes(foundCharacter.children) && foundCharacter.children.length > 0) {
+      return true;
+    }
+  }
+
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
