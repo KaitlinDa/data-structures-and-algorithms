@@ -12,7 +12,7 @@ Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
-  // Solution code here...
+  return people.map(person => `${person.firstName} ${person.lastName}`);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ Write a function named addValues that, given an array of numbers as input, uses 
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr) => {
-  // Solution code here...
+  return arr.reduce((increase, current) => increase + current, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
