@@ -22,8 +22,16 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, callback) => {
-  // Solution code here...
+  const newAnimals = [];
+
+  for (const animal of arr) {
+    const updatedAnimal = callback(animal);
+    newAnimals.push(updatedAnimal);
+  }
+
+  return newAnimals;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
