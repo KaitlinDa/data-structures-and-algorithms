@@ -36,11 +36,14 @@ Write a function named addPurchases that, given an array of objects as input, us
   purchasePrice: 399
 }
 
+
+
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
-  // Solution code here...
+  return arr.reduce((sum, purchase) => sum + purchase.purchasePrice, 0);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -51,7 +54,7 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  // Solution code here...
+  return arr.reduce((count) => count + 1, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
