@@ -46,16 +46,14 @@ const sortNames = (arr) => {
     const nameA = a.toLowerCase();
     const nameB = b.toLowerCase();
 
-    if (nameA < nameB) {
-      return -1;
-    } else if (nameA > nameB) {
-      return 1;
-    } else {
-      // If names are equal, compare them using their original casing
-      return a.localeCompare(b, undefined, { sensitivity: 'base' });
+    if (nameA !== nameB) {
+      return nameA.localeCompare(nameB);
     }
+    return a.localeCompare(b);
   });
 };
+
+
 
 
 
@@ -81,8 +79,9 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => b - a);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -95,8 +94,12 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => {
+    return a.localeCompare(b, undefined, { sensitivity: 'base' });
+  });
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -112,8 +115,9 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => a.price - b.price);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
