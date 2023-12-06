@@ -42,8 +42,22 @@ For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
 const sortNames = (arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => {
+    const nameA = a.toLowerCase();
+    const nameB = b.toLowerCase();
+
+    if (nameA < nameB) {
+      return -1;
+    } else if (nameA > nameB) {
+      return 1;
+    } else {
+      // If names are equal, compare them using their original casing
+      return a.localeCompare(b, undefined, { sensitivity: 'base' });
+    }
+  });
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -54,8 +68,9 @@ HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbers = (arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => a - b);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -235,9 +250,11 @@ describe('Testing challenge 1', () => {
 
 describe('Testing challenge 2', () => {
   test('It should return an array of names sorted alphabetically', () => {
-    expect(sortNames(['able', 'Bob'])[0]).toStrictEqual('Bob');
+    const sortedArray = sortNames(['able', 'Bob']);
+    expect(sortedArray).toStrictEqual(['Bob', 'able']);
   });
 });
+
 
 describe('Testing challenge 3', () => {
   test('It should sort low-to-high the numbers in an array', () => {
