@@ -7,8 +7,13 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 ------------------------------------------------------------------------------------------------ */
 
-function returnTen(str){
-  // Solution code here...
+function returnTen(str) {
+  if (str.length <= 10) {
+    return str.split('');
+  } else {
+    const lastTenChars = str.slice(-10);
+    return lastTenChars.split('');
+  }
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,7 +31,22 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  if (!matrix || matrix.length === 0) {
+    return undefined;
+  }
+
+  let max = Number.NEGATIVE_INFINITY;
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      const currentElement = matrix[i][j];
+      if (currentElement > max) {
+        max = currentElement;
+      }
+    }
+  }
+
+  return max;
 };
 
 /* ------------------------------------------------------------------------------------------------
