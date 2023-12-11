@@ -64,7 +64,20 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+  if (!matrix || matrix.length === 0) {
+    return 0;
+  }
+
+  let sum = 0;
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      const currentElement = matrix[i][j];
+      sum += currentElement;
+    }
+  }
+
+  return sum;
 };
 
 
@@ -91,8 +104,21 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
+  if (!stores || stores.length === 0) {
+    return [];
+  }
 
+  const totalSalesPerHour = Array(12).fill(0);
+
+  for (let i = 0; i < stores.length; i++) {
+    const storeSales = stores[i];
+
+    for (let j = 0; j < totalSalesPerHour.length; j++) {
+      totalSalesPerHour[j] += storeSales[j];
+    }
+  }
+
+  return totalSalesPerHour;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -106,7 +132,22 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  if (!hours || !data || hours.length !== data.length) {
+    return [];
+  }
+
+  const formattedData = [];
+
+  data.forEach((sales, index) => {
+    const hour = hours[index];
+    const formattedObject = {
+      sales: `${sales} cookies`,
+      time: hour,
+    };
+    formattedData.push(formattedObject);
+  });
+
+  return formattedData;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -131,7 +172,24 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  if (!arr || arr.length === 0) {
+    return 0;
+  }
+
+  let treatsQuantity = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].store === 'Pet store') {
+      const petStoreItems = arr[i].items;
+      for (let j = 0; j < petStoreItems.length; j++) {
+        if (petStoreItems[j].name === 'Treats') {
+          treatsQuantity += petStoreItems[j].quantity;
+        }
+      }
+    }
+  }
+
+  return treatsQuantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
