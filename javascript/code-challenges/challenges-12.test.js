@@ -82,8 +82,13 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  return input.map(subArray => {
+    return subArray
+      .filter(element => typeof element === 'number' && element % 5 === 0)
+      .map(number => Math.pow(2, number));
+  });
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -148,8 +153,13 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  let filteredCharacters = data.filter(character =>
+    character.gender === 'male' || character.gender === 'female'
+  );
+
+  return filteredCharacters.map(character => character.name).join(' and ');
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -158,8 +168,15 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((shortest, current) => {
+    if (shortest === null || parseInt(current.height) < parseInt(shortest.height)) {
+      return current;
+    } else {
+      return shortest;
+    }
+  }, null).name; 
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
