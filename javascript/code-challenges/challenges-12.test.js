@@ -18,9 +18,18 @@ Becomes:
 ]
 ------------------------------------------------------------------------------------------------ */
 
-function transformToLis(obj){
-  // Solution code here...
+function transformToLis(obj) {
+  let listItems = [];
+
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      listItems.push(`<li>${key}: ${obj[key]}</li>`);
+    }
+  }
+
+  return listItems;
 }
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -33,8 +42,12 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  return input.reduce((total, currentArray) => {
+    const countInCurrentArray = currentArray.filter(element => element === target).length;
+    return total + countInCurrentArray;
+  }, 0);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -47,8 +60,14 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  return input.reduce((total, currentArray) => {
+    const sumOfCurrentArray = currentArray.reduce((sum, currentElement) => {
+      return sum + currentElement;
+    }, 0);
+    return total + sumOfCurrentArray;
+  }, 0);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
