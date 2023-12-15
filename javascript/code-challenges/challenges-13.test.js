@@ -1,10 +1,14 @@
 'use strict';
 
+
 /* ------------------------------------------------------------------------------------------------
+
 
 CHALLENGE 1 - Review
 
+
 Write a function named sortByChildren that sorts the characters below by the number of children in each house (fewest to most). If a house has the same number of children, sort alphabetically by house name.
+
 
 ------------------------------------------------------------------------------------------------ */
 let characters = [
@@ -52,25 +56,51 @@ let characters = [
   }
 ];
 
+
 const sortByChildren = (charArray) => {
-  // Solution code here...
-};
+  const sortedArray = charArray.sort((a, b) => {
+    if (a.children.length < b.children.length) {
+      return -1;
+    } else if (a.children.length > b.children.length) {
+      return 1;
+    } else {
+      if (a.name < b.name) {
+        return -1;
+      } else if (a.name > b.name) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+  });
+  };
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
+
 Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not.
+
 
 ------------------------------------------------------------------------------------------------ */
 
+
 const containsW = (str) => {
-  // Solution code here...
+  return /w/.test(str);
 };
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-test Write a function named isNum that takes in a string or number of any length. This function should use a regular expression pattern to return true if the input contains a number, and false if the input does not contain a number.
+
+test test Write a function named isNum that takes in a string or number of any length. This function should use a regular expression pattern to return true if the input contains a number, and false if the input does not contain a number.
+
 
 For example:
 12345 returns true
@@ -79,42 +109,62 @@ For example:
 'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
 
+
 const isNum = (input) => {
-  // Solution code here...
+  return /\d/.test(input);
 };
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
+
 Write a function named containsWorld that takes in a string or number of any length. This function should use a regular expression pattern to return true if the input contains the word 'world' all in lower-case letters, and false if the input does not.
+
 
 ------------------------------------------------------------------------------------------------ */
 
+
 const containsWorld = (input) => {
-  // Solution code here...
+  return /world/.test(input);
 };
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
+
 Write a function named isCapitalized that takes in a string. This function should use a regular expression pattern to match all words that begin with a capital letter. It should only match words, not punctuation.
+
 
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
+
 const isCapitalized = (str) => {
-  // Solution code here...
+  const matches = str.match(/\b[A-Z][a-z]*\b/g);
+  return matches || [];
 };
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
+
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 
+
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  return arr.filter(city => /^[A-J]/.test(city));
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
