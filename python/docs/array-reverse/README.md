@@ -2,7 +2,7 @@
 <!-- Description of the challenge -->
 
 ## Whiteboard Process
-![]() add whiteboard image here
+![Code Challenge 1 Whiteboard Image](whiteboard1.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
