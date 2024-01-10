@@ -7,7 +7,7 @@ Kaitlin Davis | January 2024
 Write a function called insertShiftArray which takes in an array and a value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the middle index.
 
 ## Whiteboard Process
-![Code Challenge 2 Whiteboard Image]()
+![Code Challenge 2 Whiteboard Image](code2.png)
 
 ## Approach & Efficiency
 My approach was to create a new array and manually copy elements from the original array, inserting the new element at the middle index. This approach does not use any built-in methods, as per the specifications.
