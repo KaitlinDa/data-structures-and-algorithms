@@ -1,4 +1,4 @@
-# Code Challenge 01 - Class 401d24
+# Code Challenge 02 - Class 401d24
 
 ## Author
 Kaitlin Davis | January 2024
