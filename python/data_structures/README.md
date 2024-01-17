@@ -1,11 +1,8 @@
 # Challenge Title
-<!-- Description of the challenge -->
+The challenge involved enhancing the functionality of a LinkedList class by implementing three specific methods: append, insert_before, and insert_after. 
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
+![Whiteboard Image](img/code6.png)
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-
-## Solution
-<!-- Show how to run your code, and examples of it in action -->
+For implementing the append, insert_before, and insert_after methods in the LinkedList class, I took an approach that emphasizes clarity and adheres to the fundamental operations of a singly linked list. 
