@@ -77,5 +77,26 @@ class LinkedList:
         string_representation += "NULL"
         return string_representation
 
+    def kth_from_end(self, k):
+        if k < 0:
+            raise TargetError("k cannot be negative")
+
+        lead = self.head
+        follow = self.head
+
+        for _ in range(k):
+            if not lead:
+                raise TargetError("k is larger than the length of the list")
+            lead = lead.next
+
+        while lead and lead.next:
+            follow = follow.next
+            lead = lead.next
+
+        if not lead:
+            raise TargetError("k is larger than the length of the list")
+
+        return follow.value
+
 class TargetError(Exception):
     pass
