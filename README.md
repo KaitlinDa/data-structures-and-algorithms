@@ -10,6 +10,8 @@
 
 - [Linked List](python/data_structures/README.md) 
 
+- [Linked List Kth](python/docs/linked_list_kth/README.md)
+
 
 See [setup instructions](https://codefellows.github.io/setup-guide/code-301/2-code-challenges), in the Code 301 Setup Guide.
 
