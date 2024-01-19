@@ -97,6 +97,9 @@ class LinkedList:
             raise TargetError("k is larger than the length of the list")
 
         return follow.value
+    
+ 
 
 class TargetError(Exception):
     pass
+
