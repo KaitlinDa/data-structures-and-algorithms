@@ -1,53 +1,49 @@
-class Node:
-    def __init__(self, value, next=None):
-        self.value = value
-        self.next = next
-
+from data_structures.linked_list import Node
+from data_structures.invalid_operation_error import InvalidOperationError
 
 class Queue:
     """
-    Put docstring here
+    A Queue implementation using a linked list.
     """
 
     def __init__(self):
+        """
+        Initializes an empty queue.
+        """
         self.front = None
-        self.back = None  # could be called .rear
+        self.rear = None
 
     def enqueue(self, value):
         """
-        Adds a new node to the end of the queue, with the provided value.
+        Adds a new element with the given value to the rear of the queue.
         """
         new_node = Node(value)
 
-        # if the Queue is empty
-        if self.back is None:
+        if self.rear is None:
             self.front = new_node
-            self.back = new_node
+            self.rear = new_node
 
-        # Queue isn't empty
         else:
-            self.back.next = new_node
-            # point the queue's self.back to our new node. Update the pointer!
-            self.back = new_node
+            self.rear.next = new_node
+            self.rear = new_node
 
     def dequeue(self):
-        """
-        Removes the front node from the queue and returns its value.
-        """
-        # if the Queue is empty
         if self.front is None:
-            # TODO: raise an error
-            return None
+            raise InvalidOperationError("Cannot dequeue from an empty queue.")
 
-        # get the value
         dequeue_value = self.front.value
 
-        # move the front pointer to its next
         self.front = self.front.next
 
-        # the Queue has become empty
         if self.front is None:
-            # also need to update self.back
-            self.back = None
+            self.rear = None
 
         return dequeue_value
+
+    def peek(self):
+        if self.front is None:
+            raise InvalidOperationError("Cannot peek on an empty queue.")
+        return self.front.value
+
+    def is_empty(self):
+        return self.front is None
