@@ -1,7 +1,7 @@
 # Code Challenge 12 - Class 401d24
 
 ## Author
-Kaitlin Davis | January 2024
+Kaitlin Davis || January 2024
 
 ## Challenge Title
 Stack Queue Animal Shelter
