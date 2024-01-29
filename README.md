@@ -12,6 +12,13 @@
 
 - [Linked List Kth](python/docs/linked_list_kth/README.md)
 
+- [Linked List Zip](python/docs/linked_list_zip/README.md)
+
+- [Stack Queue Psuedo](python/docs/stack_queue_pseudo/README.md)
+
+- [Stack Queue Animal Shelter](python/docs/stack_queue_animal_shelter/README.md)
+
+- [Stack Queue Brackets](python/docs/stack_queue_brackets/README.md)
 
 See [setup instructions](https://codefellows.github.io/setup-guide/code-301/2-code-challenges), in the Code 301 Setup Guide.
 
